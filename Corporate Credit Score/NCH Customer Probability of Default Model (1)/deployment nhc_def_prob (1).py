@@ -5,11 +5,10 @@ spark = SparkSession.builder.appName('cluster').getOrCreate()
 
 # COMMAND ----------
 
-# Enable storage as a temporary directory
-storage_account_name = "ubariskdl"
-storage_account_key = "WIltzoJWmkC9x1pmXadJggmodCMFHU5A8JgS8eoInZkaoNZ9acraHrkALVOQgjtYCHgcHiQbTPhyO1DK1slrew=="
+storage_account_name = "xxxxxx"
+storage_account_key = "xxxxxx=="
 storage_container_name = "dbtemp"
-temp_dir_url =  "wasbs://dbtemp@ubariskdl.blob.core.windows.net/".format(storage_container_name, storage_account_name)
+temp_dir_url =  "wasbs://xxxxxx.blob.core.windows.net/".format(storage_container_name, storage_account_name)
 spark_config_key = "fs.azure.account.key.ubariskdl.blob.core.windows.net".format(storage_account_name)
 spark_config_value = storage_account_key
 
@@ -18,14 +17,13 @@ spark.conf.set(spark_config_key, spark_config_value)
 # COMMAND ----------
 
 # connect to SQL datawarehouse
-servername = "ubamlasvr.database.windows.net"
-databasename = "ubariskmldb"
-password = "sqlAdmin123#"
-user = "biadmin02"
-sql_dw_connection_string = "jdbc:sqlserver://ubariskdbsvr.database.windows.net:1433;database=ubariskmldb;user=biadmin02@ubariskdbsvr;password=sqlAdmin123#;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;".format(servername, databasename, servername, password,user)
+servername = "xxxxxx"
+databasename = "xxxxxx"
+password = "xxxxxx#"
+user = "xxxxxx"
+sql_dw_connection_string = "jdbc:sqlserver://xxxxxx.database.windows.net:1433;database=xxxxxx;user=xxxxxx;password=xxxxxx#;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;".format(servername, databasename, servername, password,user)
 
 # COMMAND ----------
-
 #querying data in SQL datawarehouse
 query = "select * from [stg].[nhc_predict_dataset]"
 
