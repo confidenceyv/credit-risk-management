@@ -5,7 +5,6 @@ spark = SparkSession.builder.appName('cluster').getOrCreate()
 
 # COMMAND ----------
 
-# Enable storage as a temporary directory
 storage_account_name = "xxxxxx"
 storage_account_key = "xxxxxx=="
 storage_container_name = "dbtemp"
